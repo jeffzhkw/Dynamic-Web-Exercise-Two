@@ -1,23 +1,21 @@
 import React from "react";
 
-
 function WeatherCard({
-    cloudiness,
-    currentTemp,
-    highTemp,
-    humidity,
-    lowTemp,
-    weatherType,
-    windSpeed,
+  cloudiness,
+  currentTemp,
+  highTemp,
+  humidity,
+  lowTemp,
+  weatherType,
+  windSpeed,
 }) {
-    return (
-        <section>
-        <p>
-            weatherType: <strong>{weatherType}</strong>
-        </p>
-        </section>
-    )
-    
+  return (
+    <section>
+      <p>
+        weatherType: <strong>{weatherType}</strong>
+      </p>
+    </section>
+  );
 }
 
-export default WeatherCard
+export default WeatherCard;
