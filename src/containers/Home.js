@@ -2,6 +2,8 @@ import React from "react";
 import { useMemo } from "react";
 import WeatherCard from "../components/WeatherCard";
 
+const API_KEY = `410074a26eb06d9d9eb48926b1b49e80`;
+
 function Home() {
   const {
     cloudiness,
