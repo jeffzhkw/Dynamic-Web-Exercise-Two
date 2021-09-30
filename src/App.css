@@ -1,1 +1,7 @@
+* {
+  box-sizing: border-box;
+}
 
+.cardWrapper {
+  border: 1px solid black;
+}

@@ -1,10 +1,48 @@
-import React from "react";
+import { React, useState, useEffect } from "react";
+import aixos from "axios";
 import { useMemo } from "react";
+import { useLocation } from "react-router";
 import WeatherCard from "../components/WeatherCard";
+import axios from "axios";
 
 const API_KEY = `410074a26eb06d9d9eb48926b1b49e80`;
 
+function useQuery() {
+  return new URLSearchParams(useLocation().search);
+}
+
 function Home() {
+  // URL Search Params
+  //google.com/?horse=true&dog=false
+  //localhost:3000/?city=paris
+
+  const [city, setCity] = useState();
+  const [weatherData, setWeatherData] = useState();
+  let query = useQuery();
+
+  const URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`;
+
+  useEffect(() => {
+    const cityValue = query.get("city"); //query.get(*from browser address*)
+    setCity(cityValue);
+  }, [query]);
+
+  useEffect(() => {
+    //Get Weather Data from Weather API
+    if (city) {
+      axios
+        .get(URL) //send HTTP GET
+        .then((response) => {
+          //Successful request
+          console.log(response); //see the structure of object
+          setWeatherData(response.data);
+        })
+        .catch((error) => {
+          console.warn(error);
+        });
+    }
+  }, [URL, city]);
+
   const {
     cloudiness,
     currentTemp,
@@ -14,21 +52,33 @@ function Home() {
     weatherType,
     windSpeed,
   } = useMemo(() => {
+    if (!weatherData) return {};
+
     return {
-      cloudiness: 100,
-      currentTemp: "76",
-      highTemp: `80`,
-      humidity: 100,
-      lowTemp: `80`,
-      weatherType: "Cloudy",
-      windSpeed: `10mph`,
+      cloudiness: weatherData.clouds.all,
+      currentTemp: weatherData.main.temp,
+      highTemp: weatherData.main.temp_max,
+      humidity: weatherData.main.humidity,
+      lowTemp: weatherData.main.temp_min,
+      weatherType: weatherData.weather[0].main,
+      windSpeed: weatherData.wind.speed,
     };
-  }, []);
+  }, [weatherData]);
 
   /*console.log(weatherType)*/
 
   return (
     <section className="App">
+      <header>
+        <p>
+          <a href="/?city=paris">Paris</a>
+        </p>
+        <p>
+          <a href="/?city=tokyo">Tokyo</a>
+        </p>
+      </header>
+      <h1>{city}</h1>
+      {/* sending only the data we need to send */}
       <WeatherCard
         cloudiness={cloudiness}
         currentTemp={currentTemp}
