@@ -70,12 +70,15 @@ function Home() {
   return (
     <section className="App">
       <header>
-        <p>
-          <a href="/?city=paris">Paris</a>
-        </p>
-        <p>
-          <a href="/?city=tokyo">Tokyo</a>
-        </p>
+        {/* What are all the tags that I can find? nav, main, section..... */}
+        <div className="cityList">
+          <h1>
+            <a href="/?city=paris">Paris</a>
+          </h1>
+          <h1>
+            <a href="/?city=tokyo">Tokyo</a>
+          </h1>
+        </div>
       </header>
       <h1>{city}</h1>
       {/* sending only the data we need to send */}

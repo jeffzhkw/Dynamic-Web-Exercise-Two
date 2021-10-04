@@ -2,6 +2,35 @@
   box-sizing: border-box;
 }
 
+.App {
+  margin: 0 auto;
+  max-width: 1080px;
+  padding: 0 25px;
+}
+
+.cityList {
+  display: flex;
+  flex-direction: row;
+}
+
+.cityList h1 {
+  margin: 25px 25px;
+}
 .cardWrapper {
   border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tempDetails {
+  display: flex;
+  flex-direction: row;
+}
+
+.tempDetails * {
+  margin: auto 25px;
+  display: flex;
+  flex-direction: column;
 }
