@@ -11,6 +11,7 @@
 .cityList {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 .cityList h1 {
@@ -24,9 +25,15 @@
   align-items: center;
 }
 
+.weatherImageWrapper {
+  font-size: 75px;
+  padding: 25px 25px;
+}
 .tempDetails {
   display: flex;
   flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
 }
 
 .tempDetails * {

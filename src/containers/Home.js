@@ -31,13 +31,14 @@ function Home() {
     //Get Weather Data from Weather API
     if (city) {
       axios
-        .get(URL) //send HTTP GET
+        .get(URL) //send HTTP GET, have a promise of response
         .then((response) => {
           //Successful request
           console.log(response); //see the structure of object
           setWeatherData(response.data);
         })
         .catch((error) => {
+          //unsuccessful request
           console.warn(error);
         });
     }
@@ -73,10 +74,16 @@ function Home() {
         {/* What are all the tags that I can find? nav, main, section..... */}
         <div className="cityList">
           <h1>
-            <a href="/?city=paris">Paris</a>
+            <a href="/?city=Paris">Paris</a>
           </h1>
           <h1>
-            <a href="/?city=tokyo">Tokyo</a>
+            <a href="/?city=Tokyo">Tokyo</a>
+          </h1>
+          <h1>
+            <a href="/?city=Shanghai">Shanghai</a>
+          </h1>
+          <h1>
+            <a href="/?city=New%20York">New York City</a>
           </h1>
         </div>
       </header>

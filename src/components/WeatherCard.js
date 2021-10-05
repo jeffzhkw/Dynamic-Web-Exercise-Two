@@ -1,5 +1,7 @@
 import React from "react";
 import "../App.css";
+import WeatherImage from "./WeatherImage";
+
 function WeatherCard({
   cloudiness,
   currentTemp,
@@ -11,19 +13,23 @@ function WeatherCard({
 }) {
   return (
     <section className="cardWrapper">
+      <div className="weatherImageWrapper">
+        <WeatherImage weatherType={weatherType} />
+      </div>
+
       <p className="weatherType">
         weatherType: <strong>{weatherType}</strong>
       </p>
       <div className="tempDetails">
         <h1>
-          lowTemp: <strong>{((lowTemp * 9) / 5 - 459.67).toFixed(2)}</strong>
+          lowTemp: <strong>{Math.round((lowTemp * 9) / 5 - 459.67)}</strong>
         </h1>
         <h2>
           currentTemp:
-          <strong>{((currentTemp * 9) / 5 - 459.67).toFixed(2)}</strong>
+          <strong>{Math.round((currentTemp * 9) / 5 - 459.67)}</strong>
         </h2>
         <h1>
-          highTemp: <strong>{((highTemp * 9) / 5 - 459.67).toFixed(2)}</strong>
+          highTemp: <strong>{Math.round((highTemp * 9) / 5 - 459.67)}</strong>
         </h1>
       </div>
 
