@@ -1,7 +1,7 @@
 * {
   box-sizing: border-box;
 }
-
+/* Home.js */
 .App {
   margin: 0 auto;
   max-width: 1080px;
@@ -17,6 +17,13 @@
 .cityList h1 {
   margin: 25px 25px;
 }
+.cityList h1:hover {
+}
+.cityList h1 a:active {
+  background-color: black;
+  color: azure;
+}
+/* WeatherCard.js */
 .cardWrapper {
   border: 1px solid black;
   display: flex;
@@ -27,8 +34,9 @@
 
 .weatherImageWrapper {
   font-size: 75px;
-  padding: 25px 25px;
+  margin-top: 10px;
 }
+
 .tempDetails {
   display: flex;
   flex-direction: row;
@@ -36,8 +44,17 @@
   justify-content: space-around;
 }
 
-.tempDetails * {
+.tempDetails > * {
   margin: auto 25px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+
+.tempDetails > h1 > strong {
+  font-size: 30px;
+}
+
+.tempDetails > h2 > strong {
+  font-size: 50px;
 }

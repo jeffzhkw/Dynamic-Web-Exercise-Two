@@ -18,18 +18,18 @@ function WeatherCard({
       </div>
 
       <p className="weatherType">
-        weatherType: <strong>{weatherType}</strong>
+        <strong>{weatherType}</strong>
       </p>
       <div className="tempDetails">
         <h1>
-          lowTemp: <strong>{Math.round((lowTemp * 9) / 5 - 459.67)}</strong>
+          Low: <strong>{Math.round((lowTemp * 9) / 5 - 459.67)}</strong>
         </h1>
         <h2>
-          currentTemp:
+          Current:
           <strong>{Math.round((currentTemp * 9) / 5 - 459.67)}</strong>
         </h2>
         <h1>
-          highTemp: <strong>{Math.round((highTemp * 9) / 5 - 459.67)}</strong>
+          High: <strong>{Math.round((highTemp * 9) / 5 - 459.67)}</strong>
         </h1>
       </div>
 

@@ -1,5 +1,4 @@
 import { React, useState, useEffect } from "react";
-import aixos from "axios";
 import { useMemo } from "react";
 import { useLocation } from "react-router";
 import WeatherCard from "../components/WeatherCard";
