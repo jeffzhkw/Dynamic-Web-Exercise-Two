@@ -12,7 +12,13 @@ function WeatherCard({
   windSpeed,
 }) {
   return (
-    <section className="cardWrapper">
+    <section
+      className="cardWrapper"
+      style={{
+        backgroundColor: `rgba(150,150,150, ${cloudiness / 100})`,
+        //opacity: cloudiness / 100, whole section disappear
+      }}
+    >
       <div className="weatherImageWrapper">
         <WeatherImage weatherType={weatherType} />
       </div>

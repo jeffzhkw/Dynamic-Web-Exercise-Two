@@ -24,12 +24,14 @@
   color: azure;
 }
 /* WeatherCard.js */
+
 .cardWrapper {
   border: 1px solid black;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /* Media queries: for diffrent screen size */
 }
 
 .weatherImageWrapper {
@@ -57,4 +59,13 @@
 
 .tempDetails > h2 > strong {
   font-size: 50px;
+}
+
+@media (min-width: 600px) {
+  /*applied when `min-width` is above 600px */
+  /* mobile first program */
+  /* min-width: (more than 600px) do desktop style, max-width: {less than ###px} do mobile styles */
+  .cardWrapper {
+    flex-direction: row;
+  }
 }
