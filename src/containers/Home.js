@@ -23,7 +23,11 @@ function Home() {
 
   useEffect(() => {
     const cityValue = query.get("city"); //query.get(*from browser address*)
-    setCity(cityValue);
+    if (cityValue) {
+      setCity(cityValue);
+    } else {
+      setCity(`Paris`); //Default City on first landing
+    }
   }, [query]);
 
   useEffect(() => {
@@ -33,7 +37,7 @@ function Home() {
         .get(URL) //send HTTP GET, have a promise of response
         .then((response) => {
           //Successful request
-          console.log(response); //see the structure of object
+          //console.log(response); //see the structure of object
           setWeatherData(response.data);
         })
         .catch((error) => {
@@ -86,6 +90,7 @@ function Home() {
           </h1>
         </div>
       </header>
+      {console.log(city)}
       <main className="mainWrapper">
         <h1>{city}</h1>
         {/* sending only the data we need to send */}
