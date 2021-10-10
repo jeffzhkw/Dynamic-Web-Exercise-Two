@@ -82,21 +82,23 @@ function Home() {
             <a href="/?city=Shanghai">Shanghai</a>
           </h1>
           <h1>
-            <a href="/?city=New%20York">New York City</a>
+            <a href="/?city=New%20York%20City">New York City</a>
           </h1>
         </div>
       </header>
-      <h1>{city}</h1>
-      {/* sending only the data we need to send */}
-      <WeatherCard
-        cloudiness={cloudiness}
-        currentTemp={currentTemp}
-        highTemp={highTemp}
-        humidity={humidity}
-        lowTemp={lowTemp}
-        weatherType={weatherType}
-        windSpeed={windSpeed}
-      />
+      <main className="mainWrapper">
+        <h1>{city}</h1>
+        {/* sending only the data we need to send */}
+        <WeatherCard
+          cloudiness={cloudiness}
+          currentTemp={currentTemp}
+          highTemp={highTemp}
+          humidity={humidity}
+          lowTemp={lowTemp}
+          weatherType={weatherType}
+          windSpeed={windSpeed}
+        />
+      </main>
     </section>
   );
 }

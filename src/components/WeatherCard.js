@@ -40,13 +40,13 @@ function WeatherCard({
       </div>
 
       <p>
-        cloudiness: <strong>{cloudiness}</strong>
+        Cloudiness: <strong>{cloudiness}</strong>
       </p>
       <p>
-        humidity: <strong>{humidity}</strong>
+        Humidity: <strong>{humidity}</strong>
       </p>
       <p>
-        windSpeed: <strong>{windSpeed}</strong>
+        Wind Speed: <strong>{windSpeed}</strong>
       </p>
     </section>
   );
